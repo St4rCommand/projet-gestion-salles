@@ -1,12 +1,7 @@
-package org.univ.salles;
+package org.univ.salles.vue.accueil;
 
 import javax.swing.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-/**
- * Created by romain on 13/06/16.
- */
 public class BoutonReserverSalle extends JButton {
 
     private String name;

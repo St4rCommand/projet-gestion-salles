@@ -1,12 +1,14 @@
 package org.univ.salles;
 
-import javax.swing.*;
+import org.univ.salles.controlleur.ControleurMenu;
+import org.univ.salles.vue.accueil.FenetrePrincipale;
 
-/**
- * Created by romain on 13/06/16.
- */
+import static org.univ.salles.modele.repository.AbstractRepository.configureSessionFactory;
+
 public class GestionSalles {
+
     public static void main (String[] args) {
-        FenetrePrincipale fenetrePrincipale = new FenetrePrincipale();
+        configureSessionFactory();
+        FenetrePrincipale fenetrePrincipale = new FenetrePrincipale(new ControleurMenu());
     }
 }

@@ -1,13 +1,12 @@
-package org.univ.reservations;
+package org.univ.salles.vue.reservation;
+
+import org.univ.salles.controlleur.ControleurReservation;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by romain on 13/06/16.
- */
 public class FenetreReservation extends JFrame {
 
     private JPanel container = new JPanel();
@@ -20,12 +19,17 @@ public class FenetreReservation extends JFrame {
     private JTextField noSalle = new JTextField();
     private JLabel noSalleLabel = new JLabel("Saisir le numéro de la salle");
 
-    public FenetreReservation() {
+    private ControleurReservation controleur;
+
+    public FenetreReservation(ControleurReservation controleur) {
+
+        this.controleur = controleur;
+
         this.setTitle("Réserver une salle");
         this.setSize(400, 200);
         this.setLocationRelativeTo(null);
-//        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        listeSalles = new JComboBox(this.controleur.getSalleList().toArray());
         listeSalles.setPreferredSize(new Dimension(100, 20));
         listeSallesPanel.add(listeSallesLabel);
         listeSallesPanel.add(listeSalles);
