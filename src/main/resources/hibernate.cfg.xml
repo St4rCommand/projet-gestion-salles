@@ -17,5 +17,9 @@
         <mapping class="org.univ.salles.modele.entite.Salle"/>
         <mapping class="org.univ.salles.modele.entite.TypeSalle"/>
         <mapping class="org.univ.salles.modele.entite.Batiment"/>
+        <mapping class="org.univ.salles.modele.entite.Demandeur"/>
+        <mapping class="org.univ.salles.modele.entite.Manifestation"/>
+        <mapping class="org.univ.salles.modele.entite.Materiel"/>
+        <mapping class="org.univ.salles.modele.entite.Reservation"/>
     </session-factory>
 </hibernate-configuration>
