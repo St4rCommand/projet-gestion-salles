@@ -13,7 +13,7 @@ public class RepositoryBatiment extends AbstractRepository {
     public List getBatiments() {
 
         Session session = null;
-        List result = new ArrayList<Batiment>();
+        List result = null;
 
         try {
             session = sessionFactory.openSession();

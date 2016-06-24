@@ -13,7 +13,7 @@ public class RepositoryTypeSalle extends AbstractRepository{
     public List getTypesSalle() {
 
         Session session = null;
-        List result = new ArrayList<TypeSalle>();
+        List result = null;
 
         try {
             session = sessionFactory.openSession();

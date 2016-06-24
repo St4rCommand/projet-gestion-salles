@@ -68,7 +68,7 @@ public class RepositorySalle extends AbstractRepository {
     public List getSalles() {
 
         Session session = null;
-        List result = new ArrayList<Salle>();
+        List result = null;
 
         try {
             session = sessionFactory.openSession();
