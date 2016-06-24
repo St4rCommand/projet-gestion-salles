@@ -10,6 +10,8 @@ import org.hibernate.service.ServiceRegistryBuilder;
 import org.univ.salles.modele.entite.*;
 
 import java.util.Properties;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractRepository {
 
@@ -53,33 +55,39 @@ public abstract class AbstractRepository {
 
         Session session = null;
         Transaction tx = null;
+        List result = new ArrayList<Batiment>();
 
         try {
             session = sessionFactory.openSession();
-            tx = session.beginTransaction();
+            result = session.createCriteria(Batiment.class).list();
 
-            session.save(type1);
-            session.save(type2);
-            session.save(type3);
-            session.save(type4);
+            if (result.isEmpty()) {
 
-            session.save(batimentA);
-            session.save(batimentB);
+              tx = session.beginTransaction();
 
-            session.save(demandeurA);
-            session.save(demandeurB);
-            session.save(demandeurC);
+              session.save(type1);
+              session.save(type2);
+              session.save(type3);
+              session.save(type4);
 
-            session.save(manifestationA);
-            session.save(manifestationB);
-            session.save(manifestationC);
+              session.save(batimentA);
+              session.save(batimentB);
 
-            session.save(materielA);
-            session.save(materielB);
-            session.save(materielC);
+              session.save(demandeurA);
+              session.save(demandeurB);
+              session.save(demandeurC);
 
-            session.flush();
-            tx.commit();
+              session.save(manifestationA);
+              session.save(manifestationB);
+              session.save(manifestationC);
+
+              session.save(materielA);
+              session.save(materielB);
+              session.save(materielC);
+
+              session.flush();
+              tx.commit();
+          }
         } catch (Exception ex) {
             ex.printStackTrace();
             tx.rollback();

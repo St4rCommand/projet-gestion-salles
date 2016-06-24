@@ -11,6 +11,8 @@ import java.awt.event.ActionListener;
 
 public class FenetreCreationSalle extends JFrame {
 
+    private static final int WIDTH = 200;
+
     private JPanel container = new JPanel();
     private JFrame fenetre = this;
 
@@ -48,7 +50,7 @@ public class FenetreCreationSalle extends JFrame {
         this.setLocationRelativeTo(null);
 
         listeBatiments = new JComboBox(this.controleur.getBatimentList().toArray());
-        listeBatiments.setPreferredSize(new Dimension(100, 20));
+        listeBatiments.setPreferredSize(new Dimension(WIDTH, 20));
         listeBatimentsPanel.add(listeBatimentsLabel);
         listeBatimentsPanel.add(listeBatiments);
 
@@ -66,7 +68,7 @@ public class FenetreCreationSalle extends JFrame {
         public void actionPerformed(ActionEvent actionEvent) {
 
             listeTypes = new JComboBox(controleur.getTypesSalleList().toArray());
-            listeTypes.setPreferredSize(new Dimension(100, 20));
+            listeTypes.setPreferredSize(new Dimension(WIDTH, 20));
             listeTypesPanel.add(listeTypesLabel);
             listeTypesPanel.add(listeTypes);
 
@@ -85,15 +87,15 @@ public class FenetreCreationSalle extends JFrame {
     private class BoutonValiderTypeListener implements ActionListener {
         public void actionPerformed(ActionEvent actionEvent) {
 
-            noSalle.setPreferredSize(new Dimension(100, 20));
+            noSalle.setPreferredSize(new Dimension(WIDTH, 20));
             noSallePanel.add(noSalleLabel);
             noSallePanel.add(noSalle);
 
-            noEtage.setPreferredSize(new Dimension(100, 20));
+            noEtage.setPreferredSize(new Dimension(WIDTH, 20));
             noEtagePanel.add(noEtageLabel);
             noEtagePanel.add(noEtage);
 
-            superficie.setPreferredSize(new Dimension(100, 20));
+            superficie.setPreferredSize(new Dimension(WIDTH, 20));
             superficiePanel.add(superficieLabel);
             superficiePanel.add(superficie);
 
